@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- mybatis 自定生成类配置文件配置信息 -->
+<generatorConfiguration>
+    <!-- 数据库驱动jar包的位置 -->
+    <classPathEntry location="/Users/ios-dev/java_web/mybatis-generator/src/main/resources/oracle/ojdbc6-11.2.0.4.0-atlassian-hosted.jar" />
+
+    <context id="MYSQLTables" targetRuntime="MyBatis3">
+        <!-- 取消自动生成的类及方法的注释信息 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- JDBC连接的相关配置 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@192.168.201.31:1521:wlzf"
+                        userId="h5app"
+                        password="h5app"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- domain位置 -->
+        <javaModelGenerator targetPackage="com.garlic.domain"
+                            targetProject="/Users/ios-dev/java_web/mybatis-generator/src/main/java">
+            <property name="enableSubPackage" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- mapper位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/Users/ios-dev/java_web/mybatis-generator/src/main/java/resources">
+            <property name="enableSubPackage" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- mapper.xml位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.garlic.mapper"
+                             targetProject="/Users/ios-dev/java_web/mybatis-generator/src/main/java">
+            <property name="enableSubPackage" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 数据库表的配置 -->
+        <table tableName="SYS_ROLE"
+               domainObjectName="SysRole"
+               enableCountByExample="true"
+               enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true"
+               enableSelectByExample="true"
+               selectByPrimaryKeyQueryId="true">
+        </table>
+    </context>
+</generatorConfiguration>
